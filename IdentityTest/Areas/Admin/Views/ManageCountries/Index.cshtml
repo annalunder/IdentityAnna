@@ -1,0 +1,29 @@
+﻿@model IEnumerable<DisplayCountries>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Countries</h2>
+
+<table class="table table-striped text-black-50">
+    <thead>
+        <tr>
+            <th>Country Name</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var country in Model)
+        {
+            <tr>
+                <td>@country.Name</td>
+                <td>
+                    <a class="btn btn-danger" asp-area="Admin" asp-action="Delete" asp-route-id="@country.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a class="btn btn-primary" asp-area="Admin" asp-action="Create">Add Country</a>
+

@@ -1,0 +1,24 @@
+﻿@model IEnumerable<IdentityTest.Models.ApplicationUser>
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+<table class="table table-sm table-striped">
+    <thead>
+        <tr><th>Name</th><th>Last Name<th>City</th><th>Country</th><th></th></tr>
+    </thead>
+    <tbody>
+        @foreach (var user in Model)
+        {
+            <tr>
+                <td>@user.FirstName</td>
+                <td>@user.LastName</td>
+                <td>@user.City.CityName</td>
+                <td>@user.City.Country.CountryName</td>
+                <td></td>
+            </tr>
+        }
+    </tbody>
+</table>
